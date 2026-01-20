@@ -11,7 +11,7 @@
 
 ### 安装方法
 1. 首先在浏览器中安装 **Tampermonkey** 插件。
-2. 点击本项目中的 `zxxk_downloader.user.js` 查看源码。
+2. 点击本项目中的 `学科网下载打印试卷.js` 查看源码。
 3. 复制全文，在 **Tampermonkey** 控制面板中点击“添加新脚本”，粘贴并保存。
 4. 访问 **学科网组卷网** 的试卷详情页，点击右上角工具栏新出现的 **“纯净打印”** 按钮即可。
 <img width="938" height="373" alt="image" src="https://github.com/user-attachments/assets/97f83b58-7b99-4251-afcf-52f98b2bb2b8" />

@@ -11,9 +11,9 @@
 
 ### 安装方法
 1. 首先在浏览器中安装 **Tampermonkey** 插件。
-2. 点击本项目中的 `学科网下载打印试卷.js` 查看源码。
-3. 复制全文，在 **Tampermonkey** 控制面板中点击“添加新脚本”，粘贴并保存。
-4. 访问 **学科网组卷网** 的试卷详情页，点击右上角工具栏新出现的 **“纯净打印”** 按钮即可。
+2. 点击本项目中的 `学科网下载打印试卷.js` 查看源码。复制全文，在 **Tampermonkey** 控制面板中点击“添加新脚本”，粘贴并保存。
+   或 访问https://greasyfork.org/zh-CN/scripts/564643-%E5%AD%A6%E7%A7%91%E7%BD%91%E7%BB%84%E5%8D%B7-%E8%AF%95%E5%8D%B7%E4%B8%8B%E8%BD%BD%E6%89%93%E5%8D%B0-%E7%B2%BE%E7%AE%80%E4%BC%98%E5%8C%96%E7%89%88
+3. 访问 **学科网组卷网** 的试卷详情页，点击右上角工具栏新出现的 **“纯净打印”** 按钮即可。
 <img width="938" height="373" alt="image" src="https://github.com/user-attachments/assets/97f83b58-7b99-4251-afcf-52f98b2bb2b8" />
 <img width="214" height="298" alt="image" src="https://github.com/user-attachments/assets/d9dd0e68-db7c-49de-997a-fc08a82837eb" />
 

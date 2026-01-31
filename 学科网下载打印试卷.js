@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         学科网组卷/试卷下载打印 (精简优化版)
-// @version      1.3.0
-// @namespace    http://tampermonkey.net/
+// @version      1.3.1
+// @namespace    https://greasyfork.org/users/1566377-frank-678
 // @description  【2026/1/20 优化】去除知识点、来源信息，强制黑字打印，解决空白问题。
 // @author       Frank-678
 // @match        https://zujuan.xkw.com/zujuan
@@ -9,7 +9,12 @@
 // @icon         https://zujuan.xkw.com/favicon.ico
 // @grant        GM_registerMenuCommand
 // @grant        GM_notification
-// @license      GNU Affero General Public License v3.0
+// @license      AGPL-3.0-or-later
+// @homepageURL  https://github.com/Frank-678/zxxk-zujuan-paper-downloader
+// @supportURL   https://github.com/Frank-678/zxxk-zujuan-paper-downloader/issues
+// @run-at       document-idle
+// @downloadURL https://update.greasyfork.org/scripts/564643/%E5%AD%A6%E7%A7%91%E7%BD%91%E7%BB%84%E5%8D%B7%E8%AF%95%E5%8D%B7%E4%B8%8B%E8%BD%BD%E6%89%93%E5%8D%B0%20%28%E7%B2%BE%E7%AE%80%E4%BC%98%E5%8C%96%E7%89%88%29.user.js
+// @updateURL https://update.greasyfork.org/scripts/564643/%E5%AD%A6%E7%A7%91%E7%BD%91%E7%BB%84%E5%8D%B7%E8%AF%95%E5%8D%B7%E4%B8%8B%E8%BD%BD%E6%89%93%E5%8D%B0%20%28%E7%B2%BE%E7%AE%80%E4%BC%98%E5%8C%96%E7%89%88%29.meta.js
 // ==/UserScript==
 
 (function() {

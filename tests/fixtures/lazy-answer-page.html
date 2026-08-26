@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>v3.1 懒加载答案测试页</title>
+</head>
+<body>
+  <main>
+    <article class="tk-quest-item" questionid="existing-1">
+      <div class="wrapper quesdiv" id="quesdivexisting-1">
+        <div class="exam-item__cnt">已加载题目</div>
+        <div class="exam-item__opt"><div class="item answer">答案：A</div></div>
+      </div>
+    </article>
+
+    <article class="tk-quest-item lazy-text" questionid="lazy-text-2">
+      <div class="wrapper quesdiv" id="quesdivlazy-text-2">
+        <div class="exam-item__cnt">点击后异步加载文本答案</div>
+        <div class="exam-item__opt"></div>
+      </div>
+    </article>
+
+    <article class="tk-quest-item lazy-image" questionid="lazy-image-3">
+      <div class="wrapper quesdiv" id="quesdivlazy-image-3">
+        <div class="exam-item__cnt">点击后异步加载懒图片答案</div>
+        <div class="exam-item__opt"></div>
+      </div>
+    </article>
+  </main>
+
+  <output id="download-capture" hidden></output>
+  <script>
+    (() => {
+      const svg = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="20" height="10"%3E%3Ctext x="0" y="9"%3EC%3C/text%3E%3C/svg%3E';
+      const capture = document.getElementById('download-capture');
+      let downloadNumber = 0;
+      URL.createObjectURL = blob => {
+        const id = `blob:fixture-${++downloadNumber}`;
+        blob.text().then(text => {
+          capture.textContent = text;
+          document.body.dataset.downloaded = 'true';
+        });
+        return id;
+      };
+      URL.revokeObjectURL = () => {};
+      HTMLAnchorElement.prototype.click = function () {
+        if (this.download) {
+          document.body.dataset.downloadName = this.download;
+          return;
+        }
+        return HTMLElement.prototype.click.call(this);
+      };
+
+      document.querySelector('.lazy-text .exam-item__cnt').addEventListener('click', event => {
+        const item = event.currentTarget.closest('.tk-quest-item');
+        item.dataset.clicks = String(Number(item.dataset.clicks || 0) + 1);
+        if (item.querySelector('.item.answer')) return;
+        setTimeout(() => {
+          item.querySelector('.exam-item__opt').innerHTML = '<div class="item answer">答案：B</div>';
+        }, 80);
+      });
+      document.querySelector('.lazy-image .exam-item__cnt').addEventListener('click', event => {
+        const item = event.currentTarget.closest('.tk-quest-item');
+        item.dataset.clicks = String(Number(item.dataset.clicks || 0) + 1);
+        if (item.querySelector('.item.answer')) return;
+        setTimeout(() => {
+          item.querySelector('.exam-item__opt').innerHTML = `<div class="item answer">答案：<img data-src="${svg}" alt="C"></div>`;
+        }, 80);
+      });
+    })();
+  </script>
+  <script src="../../scripts/zxxk-zujuan-export.user.js"></script>
+</body>
+</html>
